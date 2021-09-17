@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+
+    <link rel="stylesheet" href="Katex/katex.min.css">
+    <!-- Подключаем скрипты -->
+    <script src="Katex/katex.min.js"></script>
+
+
+</head>
+<body>
+
+<!-- Место под формулу -->
+<div id="formula"></div>
+
+
+
+<script>
+
+
+    // находим элемент, в который будем рендерить формулу
+    var el = document.getElementById("formula");
+
+    // вызываем метод библиотеки для отображения формулы
+    katex.render("c = \\int{a^2 + b^2}", el);
+
+
+</script>
+
+</body>
+</html>
