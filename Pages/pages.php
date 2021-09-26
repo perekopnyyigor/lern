@@ -22,8 +22,10 @@ abstract class Pages
         echo '<meta property="og:url"              content="https://tiwy.ru'.$_SERVER['REQUEST_URI'].'" />';
 
         echo '<meta name="viewport" content="width=device-width">';
-
+        echo '<link rel="stylesheet" type="text/css" href="Style/menu.css">';
         echo '<link rel="stylesheet" type="text/css" href="Style/style.css">';
+        echo '<link rel="stylesheet" type="text/css" href="Style/mob_style.css">';
+
 
         echo '<link rel="stylesheet" href="Katex/katex.min.css">';
         echo '<script src="Katex/katex.min.js"></script>';
@@ -44,12 +46,19 @@ abstract class Pages
     }
     public function menu($id_arg)
     {
-        echo '<div class="main_menu">';
+        echo '
+        <div class="hamburger-menu">
+  <input id="menu__toggle" type="checkbox" />
+  <label class="menu__btn" for="menu__toggle">
+    <span></span>
+  </label>
+        ';
+        echo '<ul class="main_menu">';
         $id_massiv = Punkt::child($id_arg);
         foreach ($id_massiv as $id)
         {
             $punkt = new Punkt($id);
-            echo '<div class ="punkt1">'.$punkt->name.'</div>';
+            echo '<li class ="punkt1">'.$punkt->name.'</li>';
             $id_punkt_massiv = Punkt::child($punkt->id);
             foreach ($id_punkt_massiv as $id_punkt)
             {
@@ -57,7 +66,7 @@ abstract class Pages
                 echo '<div class ="punkt2"><a href="https://tiwy.ru/index.php?action=browse&parent='.$sub_punkt->id.'">'.$sub_punkt->name.'</a></div>';
             }
         }
-        echo "</div>";
+        echo "</ul>";
     }
     public function lis()
     {
