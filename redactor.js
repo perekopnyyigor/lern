@@ -19,6 +19,10 @@ chem_massiv[0]={name:"F", value:"<div class="+"\\\""+"chem"+"\\\""+"></div>"};
 chem_massiv[1]={name:" H-C-H; H|#C|H", value:" H-C-H; H|#C|H"};
 chem_massiv[2]={name:" H-C; #2//O; #2\\OH", value:" H-C; #2//O; #2\\\\\\\\OH"};
 
+let prog_massiv=[]
+{
+    prog_massiv[0]={name:"javascript", value:"<pre><code class="+"\\\""+"language-javascript"+"\\\""+">"+"\\r\\n"+"\\r\\n"+" </code></pre>"};
+}
 function ins( name) {
     let redactor = document.getElementById("text") ;
     let position = redactor.selectionStart;
@@ -53,6 +57,27 @@ let menu_el = document.getElementById("menu");
 menu_el.innerHTML=menu(html_massiv,"HTML");
 menu_el.innerHTML+=menu(math_massiv,"MATH","class ='formula'");
 menu_el.innerHTML+=menu(chem_massiv,"CHEM","class ='chem'");
+menu_el.innerHTML+=menu(prog_massiv,"CODE");
+
+function upload_img() {
+    alert("Фото загружено");
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // находим элемент, в который будем рендерить формулу
 var el = document.getElementsByClassName("formula");

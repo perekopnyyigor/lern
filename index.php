@@ -30,5 +30,9 @@ switch ($_GET["action"])
     case "browse":
         $browse->view($_GET["parent"]);
         break;
+    case "save_seo":
+        $redact->save_seo();
+        break;
+
 }
 ?>

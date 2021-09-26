@@ -1,9 +1,24 @@
 <?php
 abstract class Pages
 {
-    public function header()
+    public function header($title="",$keyword="",$description="",$img="")
     {
         echo '<!DOCTYPE html>';
+        echo '<html prefix="og: http://ogp.me/ns#">';
+        echo '<head itemscope itemtype="http://schema.org/WPHeader">';
+
+        echo '<title itemprop="headline">'.$title.'</title>';
+        echo '<meta itemprop="description" name="description" content="'.$description.'">';
+        echo '<meta itemprop="keywords" name="keywords" content="'.$keyword.'">';
+
+
+        echo '<meta property="og:type"               content="article" />';
+        echo '<meta property="og:title"              content="'.$title.'" />';
+        echo '<meta property="og:description"        content="'.$description.'" />';
+        echo '<meta property="og:image"              content="'.$img.'" />';
+
+        echo '<meta property="og:url"              content="https://tiwy.ru'.$_SERVER['REQUEST_URI'].'" />';
+
         echo '<meta name="viewport" content="width=device-width">';
 
         echo '<link rel="stylesheet" type="text/css" href="Style/style.css">';
@@ -16,6 +31,8 @@ abstract class Pages
 
         echo '<link rel="stylesheet" href="Code/styles/color-brewer.min.css">';
         echo '<script src="Code/highlight.min.js"></script>';
+        echo '<script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>';
+        echo '</head>';
 
 
     }

@@ -60,12 +60,22 @@ html
     border: 2px solid #06266F;
     border-radius: 5px;
     background-color:white;
-    color: #06266F;
+
     box-shadow: 0 14px 28px rgba(06,26,61,0.25), 0 10px 10px rgba(06,26,61, 0.22);
 
 }
+.punkt2 a
+{
+    font-size: 20px;
+    text-decoration: none;
+    color: #06266F;
+    font-family: 'Inter', sans-serif;
+
+    text-align: center;
+}
 .article
 {
+    padding:1%;
     width: 50%;
     margin-left: 1%;
     height: 90vh;
@@ -77,4 +87,28 @@ html
     background-color: white;
     box-shadow: 0 14px 28px rgba(06,26,61,0.25), 0 10px 10px rgba(06,26,61, 0.22);
     float: left;
+    overflow: scroll;
 }
+.seo
+{
+    padding:1%;
+    border: 2px solid #06266F;
+    border-radius: 5px;
+    width: 20%;
+    float: left;
+}
+.seo_browse
+{
+    display: none;
+}
+.article img
+{
+    margin: 2%;
+    max-width:40% ;
+}
+.article table img
+{
+    margin: 2%;
+    max-width:100% ;
+}
+
