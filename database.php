@@ -43,5 +43,28 @@ class Database
         return $sel;
 
     }
+
+    public function select_rand($colum,$tab,$parametr="")
+    {
+        $this->connect();
+
+        $sql = "SELECT ".$colum." FROM ".$tab." ".$parametr." ORDER BY RAND() LIMIT 5";
+        $result = $this->conn->query($sql);
+        $i=0;
+
+
+        if ($result->num_rows > 0)
+        {
+            while($row = $result->fetch_assoc())
+            {
+                $sel[$i]=$row[$colum];
+                $i++;
+            }
+
+        }
+
+        return $sel;
+
+    }
 }
 ?>

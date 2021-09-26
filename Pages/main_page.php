@@ -8,6 +8,7 @@ class MaimPage extends Pages
         $this->header();
         $this->name("Технический справочник");
         $this->menu(0);
+        $this->lis();
     }
 
 

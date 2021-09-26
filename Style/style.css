@@ -111,4 +111,42 @@ html
     margin: 2%;
     max-width:100% ;
 }
+.punkt
+{
+    font-size: 15px;
 
+    width: 40%;
+    padding-top: 3px;
+    margin-left: 25%;
+    margin-top: 2px;
+    border: 2px solid #06266F;
+    border-radius: 5px;
+    background-color:white;
+    height: 160px;
+    box-shadow: 0 14px 28px rgba(06,26,61,0.25), 0 10px 10px rgba(06,26,61, 0.22);
+
+}
+.punkt a
+{
+    font-size: 20px;
+    text-decoration: none;
+    color: #06266F;
+    font-family: 'Inter', sans-serif;
+
+    text-align: center;
+    margin-left: 1%;
+}
+.punkt img
+{
+    height: 70%;
+    margin: 2%;
+    float: left;
+
+}
+.punkt p
+{
+    font-size: 16px;
+
+    color: #06266F;
+    font-family: 'Arial';
+}

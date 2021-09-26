@@ -1,4 +1,6 @@
 <?php
+require_once "database.php";
+require_once "Object/article.php";
 abstract class Pages
 {
     public function header($title="",$keyword="",$description="",$img="")
@@ -56,6 +58,20 @@ abstract class Pages
             }
         }
         echo "</div>";
+    }
+    public function lis()
+    {
+        $database = new Database();
+        $team = $database->select_rand("id","article");
+        foreach ($team as $id)
+        {
+            $article =new Article($id);
+            echo "<div class='punkt'>";
+            echo '<a href="https://tiwy.ru/index.php?action=browse&parent='.$article->id.'">'.$article->title.'</a><br>';
+            echo '<img  src="'.$article->img.'">';
+            echo '<p>'.$article->description.'</p>';
+            echo "</div>";
+        }
     }
 }
 ?>
