@@ -10,6 +10,12 @@ class MaimPage extends Pages
         $this->menu(0);
         $this->lis();
     }
+    public function lis($parent="")
+    {
+        $database = new Database();
+        $team = $database->select_rand("id","article",$parent);
+        $this->anons($team);
+    }
 
 
 }

@@ -1,0 +1,5 @@
+ User-agent: *
+ Disallow: /
+ Allow: /index.php?action=browse
+
+ Sitemap: https://tiwy.ru/sitemap.xml

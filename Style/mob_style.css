@@ -157,4 +157,17 @@
         color: #06266F;
         font-family: 'Arial';
     }
+    /*хлебный крошки*/
+
+    .breadcrumbs {
+        margin-left: 60px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .breadcrumbs > * {display: inline-block; max-width: 15em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; vertical-align: middle;}
+    .breadcrumbs a {
+        text-decoration: none;
+        color: #06266F;
+    }
+    .breadcrumbs span {}
 }

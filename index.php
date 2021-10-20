@@ -3,10 +3,14 @@ require_once "Pages/main_page.php";
 require_once "Pages/admin.php";
 require_once "Pages/redact.php";
 require_once "Pages/browse.php";
+require_once "Object/sitemap.php";
+
 $main_page=new MaimPage();
 $admin = new Admin();
 $redact = new Redact();
 $browse = new Browse();
+$sitemap = new Sitemap();
+
 switch ($_GET["action"])
 {
     case "":
@@ -32,6 +36,9 @@ switch ($_GET["action"])
         break;
     case "save_seo":
         $redact->save_seo();
+        break;
+    case "sitemap":
+        $sitemap->main();
         break;
 
 }

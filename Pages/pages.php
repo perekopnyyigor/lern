@@ -25,7 +25,7 @@ abstract class Pages
         echo '<link rel="stylesheet" type="text/css" href="Style/menu.css">';
         echo '<link rel="stylesheet" type="text/css" href="Style/style.css">';
         echo '<link rel="stylesheet" type="text/css" href="Style/mob_style.css">';
-
+        echo '<link rel="stylesheet" type="text/css" href="Style/style_600_1000.css">';
 
         echo '<link rel="stylesheet" href="Katex/katex.min.css">';
         echo '<script src="Katex/katex.min.js"></script>';
@@ -37,6 +37,24 @@ abstract class Pages
         echo '<script src="Code/highlight.min.js"></script>';
         echo '<script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>';
         echo '</head>';
+
+        echo "
+        <!-- Yandex.Metrika counter -->
+        <script type=\"text/javascript\" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");
+        
+           ym(85830240, \"init\", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+           });
+        </script>
+        <noscript><div><img src=\"https://mc.yandex.ru/watch/85830240\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+        ";
 
 
     }
@@ -54,6 +72,7 @@ abstract class Pages
   </label>
         ';
         echo '<ul class="main_menu">';
+
         $id_massiv = Punkt::child($id_arg);
         foreach ($id_massiv as $id)
         {
@@ -68,11 +87,9 @@ abstract class Pages
         }
         echo "</ul>";
     }
-    public function lis()
+    public function anons($teams)
     {
-        $database = new Database();
-        $team = $database->select_rand("id","article");
-        foreach ($team as $id)
+        foreach ($teams as $id)
         {
             $article =new Article($id);
             echo "<div class='punkt'>";
@@ -82,5 +99,6 @@ abstract class Pages
             echo "</div>";
         }
     }
+
 }
 ?>
